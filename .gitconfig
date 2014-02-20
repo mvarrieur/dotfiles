@@ -1,0 +1,19 @@
+[alias]
+	co = checkout
+[user]
+	name = Michael Varrieur
+	email = mvarrieur@leaf.me
+[color "status"]
+	changed = cyan normal bold
+	untracked = cyan normal bold
+[color "diff"]
+	old = red normal bold
+	new = green normal bold
+[diff]
+	tool = p4merge
+[difftool "p4merge"]
+	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
+	prompt = false
+	
+[difftool]
+	prompt = false
