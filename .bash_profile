@@ -15,6 +15,7 @@ source ~/git-completion.bash
 
 # Aliases
 alias re='rbenv exec'
+alias brake='bundle exec rake'
 alias public='cd ~/Leaf/leafpublic/'
 alias styles='cd ~/Leaf/leaf-styleguide'
 
