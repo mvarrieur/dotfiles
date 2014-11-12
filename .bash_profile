@@ -16,8 +16,15 @@ source ~/git-completion.bash
 # Aliases
 alias re='rbenv exec'
 alias brake='bundle exec rake'
+
 alias public='cd ~/Leaf/leafpublic/'
 alias styles='cd ~/Leaf/leaf-styleguide'
+alias home='cd ~/Leaf/leafhome'
+alias settings='cd ~/Leaf/leafsettings'
+alias reports='cd ~/Leaf/leafreports'
+alias tools='cd ~/Leaf/leaftools/'
+alias gitprune='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 
-
+# Homebrew before system tools
+export PATH=/usr/local/bin:$PATH
 
