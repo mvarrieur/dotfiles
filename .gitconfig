@@ -1,18 +1,43 @@
-[credential]
-        helper = osxkeychain
 [user]
-        name = Michael Varrieur
-        email = mike.varrieur@gmail.com
-        signingkey = C8F26520
+  name = Michael Varrieur
+  email = mike.varrieur@gmail.com
+  signingkey = C8F26520
 [alias]
-        co = checkout
-        glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  new = checkout -b
+  co = checkout
+  ci = commit
+  cm = commit -m
+  cam = commit -am
+  ca = commit --amend # careful
+  st = status
+  br = branch
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen--> %cr%Creset by %Cblue%cN <%cE>%Creset' --abbrev-commit --date=relative
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+  s = status --short
+  a = !git add . && git status
+  au = !git add -u . && git statustus
+  aa = !git add . && git add -u . && git status
+  ac = !git add . && git commit
+  acm = !git add . && git commit -m
+  put = push origin HEAD
+  get = pull origin HEAD
 [mergetool "p4merge"]
-        cmd = /Applications/p4merge.app/Contents/MacOS/p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-        keepTemporaries = false
-        trustExitCode = false
-        keepBackup = false
+  cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+  keepTemporaries = false
+  trustExitCode = false
+  keepBackup = false
 [merge]
-        tool = p4merge
+  tool = p4merge
 [mergetool]
-        keepBackup = false
+  keepBackup = false
+[diff]
+  tool = p4merge
+[difftool]
+  prompt = false
+[difftool "p4merge"]
+  cmd = p4merge "$LOCAL" "$REMOTE"
+  keepTemporaries = false
+  trustExitCode = false
+  keepBackup = false
